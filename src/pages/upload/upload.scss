@@ -1,0 +1,92 @@
+.myheader{
+  color: #f4f4f4;
+  font-family: 'Frijole', cursive;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin: 10px 20px
+}
+.mynav .mybtn {
+  margin: 20px 0;
+  color: black;
+  font-family: 'Rock Salt', cursive;
+  background-color: #F9BF3B;
+  border-color: #F9BF3B;
+  text-transform: uppercase;
+  font-weight: 800;
+
+}
+
+.mynav .mybtn:hover {
+  color: black;
+  background-color: #E9AD1F;
+  border-color: #E9AD1F;
+}
+
+.mytitle {
+  font-family: 'Rock Salt', cursive;
+  vertical-align: middle;
+  margin: 10px 20px
+}
+
+.modal-body .uploadbutton{
+  margin: 10px 0;
+  color: #F9BF3B;
+  background-color: #555555;
+  border-color: #555555;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.modal-body .uploadbutton:hover {
+  background-color: black;
+  border-color: black;
+}
+
+
+.modal-body .info-para1{
+  font-size: 1.5em;
+  color: #555555;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+.modal-body .info-para2{
+  font-size: 1.3em;
+  color: #555555;
+}
+
+
+.modal-body .info img{
+  width: 100px;
+  height: auto;
+}
+
+.modal-footer .footer-btn {
+  color: black;
+  font-family: 'Rock Salt', cursive;
+  background-color: #F9BF3B;
+  border-color: #F9BF3B;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.modal-footer .footer-btn:hover {
+  color: black;
+  background-color: #E9AD1F;
+  border-color: #E9AD1F;
+}
+
+@media only screen and (max-width: 860px){
+  .mynav .mybtn {
+    width:100%;
+    margin: 0 0 20px 0;
+  }
+  .myheader {
+    font-size: 1.5em;
+  }
+}
+
+ion-content {
+  background-color: #353838 !important;
+}
+

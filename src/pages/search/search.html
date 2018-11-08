@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="light" floating>Query</ion-label>
+    <ion-input [(ngModel)]="query"></ion-input>
+  </ion-item>
+  <button id="login" ion-button (tap)="search()">Rechercher</button>
+  <div *ngFor="let item of data">
+    <span *ngIf="item.video == 0">
+      <div class="img-block">
+          <img src = "{{ item.link }}"/>
+        <div class="img-title">
+          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="add_to_favorite(item.id)">Rechercher</button>
+          {{ item.title }}
+        </div>
+      </div>
+    </span>
+  </div>
+</ion-content>

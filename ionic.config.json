@@ -1,0 +1,7 @@
+{
+  "name": "DEV_epicture_2018",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

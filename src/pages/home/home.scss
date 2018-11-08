@@ -1,0 +1,26 @@
+page-home {
+
+  ion-content {
+    background: -webkit-linear-gradient(-90deg, #171544 45%, #353838 100%) !important;
+  }
+  h3 {
+    color: whitesmoke;
+  }
+  p {
+    color: whitesmoke;
+  }
+  .img-block {
+    float: left;
+    width: 33%;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(0, 25, 128, 0.25);
+  }
+  .img-block img {
+    height: 300px;
+  }
+  .img-title {
+    font-size: 18px;
+    color: white;
+  }
+}

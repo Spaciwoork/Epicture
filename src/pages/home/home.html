@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Welcome To the best Epicture</h3>
+
+  <p>
+    Merci de vous connecter !
+  </p>
+
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button id= connect ion-button (tap)="connect()" color="Dark">Connection</button>
+  <ion-item>
+    <ion-label color="light" floating>Query</ion-label>
+    <ion-input [(ngModel)]="query"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Section</ion-label>
+    <ion-select [(ngModel)]="section">
+      <ion-option value="hot" selected=true>Hot</ion-option>
+      <ion-option value="top">Top</ion-option>
+      <ion-option value="user">User</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Sort</ion-label>
+    <ion-select [(ngModel)]="sort">
+      <ion-option value="viral" selected=true>Viral</ion-option>
+      <ion-option value="top">Top</ion-option>
+      <ion-option value="time">Time</ion-option>
+      <ion-option value="rising">Rising</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Window</ion-label>
+    <ion-select [(ngModel)]="window">
+      <ion-option value="day" selected=true>Day</ion-option>
+      <ion-option value="week">Week</ion-option>
+      <ion-option value="month">Month</ion-option>
+      <ion-option value="year">Year</ion-option>
+      <ion-option value="all">All</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <button id="login" ion-button (tap)="search()">Rechercher</button>
+  <div *ngFor="let item of data">
+    <span *ngIf="item.video == 0">
+      <div class="img-block">
+          <img src = "{{ item.link }}"/>
+        <div class="img-title">
+          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="add_to_favorite(item.id)">Rechercher</button>
+          {{ item.title }}
+        </div>
+      </div>
+    </span>
+  </div>
+</ion-content>

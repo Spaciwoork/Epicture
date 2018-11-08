@@ -1,0 +1,18 @@
+page-connection {
+
+  #login {
+    display: block;
+    margin: 20px auto;
+    padding: 30px;
+  }
+  ion-card.card {
+    background: rgba(232, 230, 230, 0.6px);
+    border-radius: 10px
+  }
+  .item {
+    background: rgba(232, 230, 230, 0px);
+  }
+  ion-content {
+    background: -webkit-linear-gradient(-90deg, #171544 35%, #353838 100%) !important;
+  }
+}

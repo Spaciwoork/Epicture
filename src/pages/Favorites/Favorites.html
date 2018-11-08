@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Favorite</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="light" floating>Query</ion-label>
+    <ion-input [(ngModel)]="query"></ion-input>
+  </ion-item>
+  <button id="addfav" ion-button (tap)="addfavorite(this.dataClient.account_id)">Rechercher</button>
+  <button id="login" ion-button (tap)="favorites()">Rechercher</button>
+  <li *ngFor="let item of data">
+    {{ item.title }}
+    <img src = "{{ item.link }}"/>
+    <ul *ngFor="let image of item.images">
+      <img src = "{{ image.link }}"/>
+    </ul>
+  </li>
+</ion-content>
