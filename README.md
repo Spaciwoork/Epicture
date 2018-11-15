@@ -1,5 +1,4 @@
-ACTUALY IN BUILDING:
-===================
+***START PROJECT***
 
-npm install
-ionic serve ...
+run command :
+  * ionic serve

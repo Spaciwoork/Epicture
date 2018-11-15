@@ -19,7 +19,6 @@ export class favoritesPage {
     this.data = [];
   }
   public favorites() {
-    //this.searchService.
     this.favoriteService.favorite().then(
       data => {
         this.data = data;
@@ -37,9 +36,8 @@ export class favoritesPage {
 
     );
   }
-  public addfavorite(id) {
-    this.addfavoriteservice.addingfavorite(id, this.dataClient.refresh_token)
+  public addfavorite() {
+    this.addfavoriteservice.addingfavorite(this.query, this.dataClient.refresh_token)
   }
-  
 }
 

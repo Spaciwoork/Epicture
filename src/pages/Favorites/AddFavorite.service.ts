@@ -8,23 +8,25 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AddFavoriteService {
   private searchUrl='https://api.imgur.com/3/image/';
-  private id_picture;
   private endpoint = '/favorite';
   private finalurl;
+  public data;
 
-  constructor(private http: Http){}
+  constructor(private http: Http, public dataClient: DataClient){}
 
   addingfavorite(id, token):Promise<any> {
+    console.log(token);
+    let headers = new Headers({'Authorization': 'Bearer ' + this.dataClient.access_token});
+    let options = new RequestOptions({ headers: headers });
     this.finalurl = this.searchUrl + id + this.endpoint;
-    let clientId = '24753a039b8a2e6';
-    let headers = new Headers({'Authorization': 'Bearer ' + token});
-    return this.http.get(this.finalurl)
+    console.log(this.finalurl);
+    return this.http.post(this.searchUrl + id + this.endpoint, '', options)
       .toPromise().then(this.extractData).catch(this.handleError);
   }
 
   private extractData(res: Response) {
     let responseData = res.json();
-    //console.log(responseData.data);
+    console.log(responseData.data);
     //this.data = responseData.data;
     return responseData.data || {};
   }

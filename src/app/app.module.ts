@@ -4,8 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { SearchPage } from '../pages/search/search';
+import { ImagesUserPage } from '../pages/images_user/images_user';
 import {ConnectionOauth} from "../pages/Connection/connection";
 import { login_inPage } from "../pages/login_in/login_in";
 
@@ -15,22 +15,21 @@ import { upload_inPage } from "../pages/upload/upload";
 import { HttpModule } from "@angular/http";
 import { UploadService } from '../pages/upload/upload.service';
 import { SearchService} from '../pages/search/search.service';
-import { MyImagePage} from '../pages/my_images/my_image';
+import { ImagesUserService} from '../pages/images_user/images_user.service';
 import { FavoritesService } from  '../pages/Favorites/Favorites.service'
 import {favoritesPage} from "../pages/Favorites/Favorites";
 import {ConnectionService} from "../pages/Connection/connection.service";
 import { getrefreshtoken } from "../pages/Connection/getRefreshToken";
 import { DataClient } from '../pages/Connection/dataClient';
-import {MyImageService} from "../pages/my_images/my_image.service";
 import {HomeService} from '../pages/home/home.service'
+import {AddFavoriteService} from "../pages/Favorites/AddFavorite.service";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     SearchPage,
-    MyImagePage,
+    ImagesUserPage,
     login_inPage,
     upload_inPage,
     favoritesPage,
@@ -45,9 +44,8 @@ import {HomeService} from '../pages/home/home.service'
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     SearchPage,
-    MyImagePage,
+    ImagesUserPage,
     login_inPage,
     upload_inPage,
     favoritesPage,
@@ -59,12 +57,13 @@ import {HomeService} from '../pages/home/home.service'
     UploadService,
     HomeService,
     SearchService,
-    MyImageService,
+    ImagesUserService,
     FavoritesService,
     ConnectionService,
     getrefreshtoken,
     ConnectionOauth,
     DataClient,
+    AddFavoriteService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

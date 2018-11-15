@@ -13,7 +13,7 @@ export class ConnectionOauth {
   errorMessage: string;
   public token;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public connectionService: ConnectionService, public gettoken: getrefreshtoken) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public connectionService: ConnectionService) {
     this.data = [];
   }
   public oauthreq() {

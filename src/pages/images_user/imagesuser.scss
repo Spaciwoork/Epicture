@@ -1,0 +1,25 @@
+page-imagesuser {
+  ion-item{
+    background-color: $toolbar-background !important;
+  }
+  picture {
+    display: inline-block;
+  }
+  ion-content {
+    background: -webkit-linear-gradient(-90deg, #171544 25%, #353838 100%) !important;
+  }
+  .img-block {
+    float: left;
+    width: 33%;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(0, 25, 128, 0.25);
+  }
+  .img-block img {
+    height: 300px;
+  }
+  .img-title {
+    font-size: 18px;
+    color: white;
+  }
+}

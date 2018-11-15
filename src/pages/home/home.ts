@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { ConnectionOauth } from '../Connection/connection';
 import { DataClient } from '../Connection/dataClient';
-import {SearchService} from '../search/search.service'
-import {HomeService} from './home.service'
+import {SearchService} from '../search/search.service';
+import {HomeService} from './home.service';
+import {AddFavoriteService} from "../Favorites/AddFavorite.service";
 
 @Component({
   selector: 'page-home',
@@ -19,7 +20,7 @@ export class HomePage {
   public account_username;
   public account_id;
   public errorMessage;
-
+  private page;
 
   public section;
   public sort;
@@ -29,8 +30,9 @@ export class HomePage {
   data: Array<{}>;
 
   public token;
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public dataClient: DataClient, public homeService:HomeService) {
-    dataClient.access_token = this.getUrlParameter('account_id');
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public dataClient: DataClient, public homeService:HomeService, public addfavoriteservice:AddFavoriteService) {
+    this.page = 0;
+    dataClient.access_token = this.getUrlParameter('access_token');
     dataClient.expires_in = this.getUrlParameter('expires_in');
     dataClient.token_type = this.getUrlParameter('token_type');
     dataClient.refresh_token = this.getUrlParameter('refresh_token');
@@ -40,6 +42,7 @@ export class HomePage {
     this.sort = "viral";
     this.window =  "day";
     this.data = [];
+    this.search();
   }
   private getUrlParameter(sParam) {
     let pos = window.location.href.search(sParam);
@@ -55,9 +58,7 @@ export class HomePage {
     this.navCtrl.push(ConnectionOauth);
   }
   public search() {
-    //console.log(this.dataClient);
-    //this.searchService.
-    this.homeService.search(this.query, this.section, this.sort, this.window).then(
+    this.homeService.search(this.query, this.section, this.sort, this.window, this.page).then(
       data => {
         let i = 0;
         let images = Array<{}>();
@@ -86,7 +87,7 @@ export class HomePage {
         }
         console.log(images);
         this.data = images;
-        //console.log(data)
+        this.page += 1;
       },
       error =>this.errorMessage = <any>error
 
@@ -95,5 +96,10 @@ export class HomePage {
   add_to_favorite(balise) {
     console.log(balise);
   }
+  doInfinite(infiniteScroll) {
+    this.search();
+    infiniteScroll.complete();
+  }
+
 }
 

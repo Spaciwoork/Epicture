@@ -6,12 +6,12 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SearchService {
-  private searchUrl='https://api.imgur.com/3/gallery/search/top/0';
+  private searchUrl='https://api.imgur.com/3/gallery/search/top/';
   public data;
 
   constructor(private http: Http){}
 
-  search(query: string): Promise<any>{
+  search(query: string, page: string): Promise<any>{
     let clientId = 'd66c3cd99090df2';
     let headers = new Headers({'Authorization': 'Client-ID ' + clientId});
     let options = new RequestOptions({ headers: headers });
@@ -20,7 +20,7 @@ export class SearchService {
         query = '?q=' + query;
     else
       query = '';
-    console.log(this.searchUrl + query);
+    console.log(this.searchUrl + page + query);
     return this.http.get(this.searchUrl + query, options)
       .toPromise().then(this.extractData).catch(this.handleError);
   }

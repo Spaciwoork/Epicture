@@ -10,18 +10,21 @@
 <ion-content padding>
   <ion-item>
     <ion-label color="light" floating>Query</ion-label>
-    <ion-input [(ngModel)]="query"></ion-input>
+    <ion-input  class="text-input" type="text" color="light" [(ngModel)]="query"></ion-input>
   </ion-item>
   <button id="login" ion-button (tap)="search()">Rechercher</button>
   <div *ngFor="let item of data">
     <span *ngIf="item.video == 0">
       <div class="img-block">
           <img src = "{{ item.link }}"/>
-        <div class="img-title">
-          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="add_to_favorite(item.id)">Rechercher</button>
+        <div style="background-color: #4d4d4d; padding-bottom: 11%;" class="img-title">
+          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="addfavoriteservice.addingfavorite(item.id)">Favoris</button>
           {{ item.title }}
         </div>
       </div>
     </span>
   </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

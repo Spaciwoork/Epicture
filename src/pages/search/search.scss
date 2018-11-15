@@ -10,16 +10,24 @@ page-search {
   }
   .img-block {
     float: left;
-    width: 33%;
+    width: 23%;
     height: 400px;
+    margin-left: 20px;
     text-align: center;
     background-color: rgba(0, 25, 128, 0.25);
+    border-color: #555555;
+    border-style: solid;
+    overflow: hidden;
+    border-radius: 25px;
   }
   .img-block img {
     height: 300px;
   }
   .img-title {
     font-size: 18px;
+    color: white;
+  }
+  input, select, textarea{
     color: white;
   }
 }

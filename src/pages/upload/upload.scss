@@ -6,27 +6,13 @@
   vertical-align: middle;
   margin: 10px 20px
 }
-.mynav .mybtn {
-  margin: 20px 0;
-  color: black;
-  font-family: 'Rock Salt', cursive;
-  background-color: #F9BF3B;
-  border-color: #F9BF3B;
-  text-transform: uppercase;
-  font-weight: 800;
 
-}
-
-.mynav .mybtn:hover {
-  color: black;
-  background-color: #E9AD1F;
-  border-color: #E9AD1F;
-}
 
 .mytitle {
   font-family: 'Rock Salt', cursive;
   vertical-align: middle;
-  margin: 10px 20px
+  margin: 10px 20px;
+  color: white;
 }
 
 .modal-body .uploadbutton{
@@ -43,35 +29,21 @@
   border-color: black;
 }
 
-
-.modal-body .info-para1{
-  font-size: 1.5em;
-  color: #555555;
-  margin: 0 0 20px 0;
-  padding: 0;
+ion-content {
+  background: -webkit-linear-gradient(-90deg, #171544 25%, #353838 100%) !important;
 }
-.modal-body .info-para2{
-  font-size: 1.3em;
-  color: #555555;
-}
-
 
 .modal-body .info img{
   width: 100px;
   height: auto;
 }
 
-.modal-footer .footer-btn {
-  color: black;
-  font-family: 'Rock Salt', cursive;
-  background-color: #F9BF3B;
-  border-color: #F9BF3B;
-  text-transform: uppercase;
-  font-weight: 700;
+.mylabel {
+  color: white;
 }
 
 .modal-footer .footer-btn:hover {
-  color: black;
+  color: white;
   background-color: #E9AD1F;
   border-color: #E9AD1F;
 }
@@ -86,7 +58,4 @@
   }
 }
 
-ion-content {
-  background-color: #353838 !important;
-}
 

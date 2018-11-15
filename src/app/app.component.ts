@@ -4,12 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { SearchPage } from '../pages/search/search';
-import { MyImagePage } from '../pages/my_images/my_image';
 import {ConnectionOauth} from "../pages/Connection/connection";
 import {upload_inPage} from "../pages/upload/upload";
 import {favoritesPage} from "../pages/Favorites/Favorites";
+import {ImagesUserPage} from "../pages/images_user/images_user";
 
 @Component({
   templateUrl: 'app.html'
@@ -27,9 +26,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
       { title: 'Search', component: SearchPage },
-      { title: 'MyImagePage', component: MyImagePage },
+      { title: 'Image User', component: ImagesUserPage },
       { title: 'Connection', component: ConnectionOauth},
       { title: 'Upload', component: upload_inPage},
       { title: 'Favorite', component: favoritesPage},

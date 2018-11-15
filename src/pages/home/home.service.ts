@@ -14,11 +14,8 @@ export class HomeService {
 
   constructor(private http: Http){}
 
-  search(query: string, section: string, sort: string, window: string): Promise<any>{
-    console.log(section);
-    console.log(sort);
-    console.log(window);
-    this.searchUrl = 'https://api.imgur.com/3/gallery/'+section+'/'+sort+'/'+window+'/0?showViral=true&mature=false&album_previews=true'
+  search(query: string, section: string, sort: string, window: string, page: string): Promise<any>{
+    this.searchUrl = 'https://api.imgur.com/3/gallery/'+section+'/'+sort+'/'+window+'/'+page+'?showViral=true&mature=false&album_previews=true';
     let clientId = 'd66c3cd99090df2';
     let headers = new Headers({'Authorization': 'Client-ID ' + clientId});
     let options = new RequestOptions({ headers: headers });

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Image</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let item of data">
+      <div class="img-block">
+          <img src = "{{ item.link }}"/>
+        <div class="img-title">
+          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="delete(item)">Delete</button>
+        </div>
+      </div>
+  </div>
+</ion-content>

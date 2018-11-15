@@ -1,0 +1,4 @@
+#Tue Nov 13 17:01:23 CET 2018
+base.0=/home/spaciwork/TEK3_2018/DEV_epicture_2018/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

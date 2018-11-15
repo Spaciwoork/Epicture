@@ -27,6 +27,8 @@ export class FavoritesService {
   }
   private extractData(res: Response) {
     let responseData = res.json();
+    console.log("BITEEEEE");
+    console.log(responseData);
     //console.log(responseData.data);
     //this.data = responseData.data;
     return responseData.data || {};

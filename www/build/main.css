@@ -25711,10 +25711,15 @@ page-home p {
 
 page-home .img-block {
   float: left;
-  width: 33%;
+  width: 23%;
   height: 400px;
+  margin-left: 20px;
   text-align: center;
   background-color: rgba(0, 25, 128, 0.25);
+  border-color: #555555;
+  border-style: solid;
+  overflow: hidden;
+  border-radius: 25px;
 }
 
 page-home .img-block img {
@@ -25726,12 +25731,33 @@ page-home .img-title {
   color: white;
 }
 
-page-list ion-content {
-  background-color: #353838 !important;
+page-imagesuser ion-item {
+  background-color: #171544 !important;
 }
 
-page-my_image ion-content {
-  background-color: #353838 !important;
+page-imagesuser picture {
+  display: inline-block;
+}
+
+page-imagesuser ion-content {
+  background: -webkit-linear-gradient(-90deg, #171544 25%, #353838 100%) !important;
+}
+
+page-imagesuser .img-block {
+  float: left;
+  width: 33%;
+  height: 400px;
+  text-align: center;
+  background-color: rgba(0, 25, 128, 0.25);
+}
+
+page-imagesuser .img-block img {
+  height: 300px;
+}
+
+page-imagesuser .img-title {
+  font-size: 18px;
+  color: white;
 }
 
 page-search ion-item {
@@ -25748,10 +25774,15 @@ page-search ion-content {
 
 page-search .img-block {
   float: left;
-  width: 33%;
+  width: 23%;
   height: 400px;
+  margin-left: 20px;
   text-align: center;
   background-color: rgba(0, 25, 128, 0.25);
+  border-color: #555555;
+  border-style: solid;
+  overflow: hidden;
+  border-radius: 25px;
 }
 
 page-search .img-block img {
@@ -25760,6 +25791,10 @@ page-search .img-block img {
 
 page-search .img-title {
   font-size: 18px;
+  color: white;
+}
+
+page-search input, page-search select, page-search textarea {
   color: white;
 }
 
@@ -25772,26 +25807,11 @@ page-search .img-title {
   margin: 10px 20px;
 }
 
-.mynav .mybtn {
-  margin: 20px 0;
-  color: black;
-  font-family: 'Rock Salt', cursive;
-  background-color: #F9BF3B;
-  border-color: #F9BF3B;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-.mynav .mybtn:hover {
-  color: black;
-  background-color: #E9AD1F;
-  border-color: #E9AD1F;
-}
-
 .mytitle {
   font-family: 'Rock Salt', cursive;
   vertical-align: middle;
   margin: 10px 20px;
+  color: white;
 }
 
 .modal-body .uploadbutton {
@@ -25808,16 +25828,8 @@ page-search .img-title {
   border-color: black;
 }
 
-.modal-body .info-para1 {
-  font-size: 1.5em;
-  color: #555555;
-  margin: 0 0 20px 0;
-  padding: 0;
-}
-
-.modal-body .info-para2 {
-  font-size: 1.3em;
-  color: #555555;
+ion-content {
+  background: -webkit-linear-gradient(-90deg, #171544 25%, #353838 100%) !important;
 }
 
 .modal-body .info img {
@@ -25825,17 +25837,12 @@ page-search .img-title {
   height: auto;
 }
 
-.modal-footer .footer-btn {
-  color: black;
-  font-family: 'Rock Salt', cursive;
-  background-color: #F9BF3B;
-  border-color: #F9BF3B;
-  text-transform: uppercase;
-  font-weight: 700;
+.mylabel {
+  color: white;
 }
 
 .modal-footer .footer-btn:hover {
-  color: black;
+  color: white;
   background-color: #E9AD1F;
   border-color: #E9AD1F;
 }
@@ -25848,8 +25855,4 @@ page-search .img-title {
   .myheader {
     font-size: 1.5em;
   }
-}
-
-ion-content {
-  background-color: #353838 !important;
 }

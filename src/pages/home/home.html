@@ -16,17 +16,13 @@
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
   <button id= connect ion-button (tap)="connect()" color="Dark">Connection</button>
-  <ion-item>
-    <ion-label color="light" floating>Query</ion-label>
-    <ion-input [(ngModel)]="query"></ion-input>
-  </ion-item>
 
   <ion-item>
     <ion-label>Section</ion-label>
     <ion-select [(ngModel)]="section">
-      <ion-option value="hot" selected=true>Hot</ion-option>
-      <ion-option value="top">Top</ion-option>
-      <ion-option value="user">User</ion-option>
+      <ion-option value="hot" selected=true (ionSelect)="search()">Hot</ion-option>
+      <ion-option value="top" (ionSelect)="search()">Top</ion-option>
+      <ion-option value="user" (ionSelect)="search()">User</ion-option>
     </ion-select>
   </ion-item>
 
@@ -34,21 +30,21 @@
   <ion-item>
     <ion-label>Sort</ion-label>
     <ion-select [(ngModel)]="sort">
-      <ion-option value="viral" selected=true>Viral</ion-option>
-      <ion-option value="top">Top</ion-option>
-      <ion-option value="time">Time</ion-option>
-      <ion-option value="rising">Rising</ion-option>
+      <ion-option value="viral" selected=true (ionSelect)="search()">Viral</ion-option>
+      <ion-option value="top" (ionSelect)="search()">Top</ion-option>
+      <ion-option value="time" (ionSelect)="search()">Time</ion-option>
+      <ion-option value="rising"(ionSelect)="search()">Rising</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Window</ion-label>
     <ion-select [(ngModel)]="window">
-      <ion-option value="day" selected=true>Day</ion-option>
-      <ion-option value="week">Week</ion-option>
-      <ion-option value="month">Month</ion-option>
-      <ion-option value="year">Year</ion-option>
-      <ion-option value="all">All</ion-option>
+      <ion-option value="day" selected=true (ionSelect)="search()">Day</ion-option>
+      <ion-option value="week" (ionSelect)="search()" >Week</ion-option>
+      <ion-option value="month" (ionSelect)="search()">Month</ion-option>
+      <ion-option value="year" (ionSelect)="search()">Year</ion-option>
+      <ion-option value="all" (ionSelect)="search()">All</ion-option>
     </ion-select>
   </ion-item>
 
@@ -57,11 +53,14 @@
     <span *ngIf="item.video == 0">
       <div class="img-block">
           <img src = "{{ item.link }}"/>
-        <div class="img-title">
-          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="add_to_favorite(item.id)">Rechercher</button>
-          {{ item.title }}
+        <div style="background-color: #4d4d4d; padding-bottom: 11%;" class="img-title">
+          <button id="img-{{ item.id }}" data-id="{{ item.id }}" ion-button (tap)="addfavoriteservice.addingfavorite(item.id)">Favorite</button>
+          <span>{{ item.title }} </span>
         </div>
       </div>
     </span>
   </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

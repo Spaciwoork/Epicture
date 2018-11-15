@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {SearchService} from './search.service'
 import {DataClient} from "../Connection/dataClient";
+import {favoritesPage} from "../Favorites/Favorites";
+import {AddFavoriteService} from "../Favorites/AddFavorite.service";
 
 @Component({
   selector: 'page-search',
@@ -11,13 +13,12 @@ export class SearchPage {
   query: string;
   data: Array<{}>;
   errorMessage: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public searchService: SearchService, public dataClient: DataClient) {
+  private page;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public searchService: SearchService, public dataClient: DataClient, public addfavoriteservice: AddFavoriteService) {
     this.data = [];
   }
   public search() {
-    //console.log(this.dataClient);
-    //this.searchService.
-    this.searchService.search(this.query).then(
+    this.searchService.search(this.query, this.page).then(
       data => {
         let i = 0;
         let images = Array<{}>();
@@ -31,11 +32,9 @@ export class SearchPage {
               console.log(data[i]);
             }
             images.push(data[i]);
-            //console.log(data[i].id);
           }
           if (data[i].images != undefined){
             data[i].images[0].title = data[i].title;
-            //console.log(data[i].images[0].link.search(".mp4"));
             if (data[i].images[0].link.search(".mp4") == -1)
               data[i].images[0].video = 0;
             else {
@@ -46,20 +45,21 @@ export class SearchPage {
           }
           i++;
         }
+        console.log(this.page);
         this.data = images;
-        //console.log(data)
+        this.page += 1;
       },
       error =>this.errorMessage = <any>error
 
     );
   }
-  add_to_favorite(balise) {
-    console.log(balise);
-  }
   itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
     this.navCtrl.push(SearchPage, {
       item: item
     });
+  }
+  doInfinite(infiniteScroll) {
+    this.search();
+    infiniteScroll.complete();
   }
 }
